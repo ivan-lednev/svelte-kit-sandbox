@@ -1,14 +1,11 @@
 <script>
+  import { dummyAction } from "./dummy-action.svelte"
+
   const { prop } = $props()
 
   let trackedState = $state(0)
   const getTrackedState = () => trackedState
 
-  function dummyAction(el, { getTrackedState, propFromComponent }) {
-    $effect(() => {
-      console.log("action $effect: ", { buttonClicked: getTrackedState() })
-    })
-  }
 </script>
 
 <div
